@@ -17,3 +17,6 @@ router.route('/articles/:id')
 //make this secure once I've tested it
 router.post('/events/:id/comments', articles.commentCreate);
 router.delete('/events/:id/comments/:commentId', articles.commentDelete);
+
+
+module.exports = router;
