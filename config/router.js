@@ -13,3 +13,7 @@ router.route('/articles/:id')
   .put(articles.update)
   //make this secure once I've tested it
   .delete(articles.delete);
+
+//make this secure once I've tested it
+router.post('/events/:id/comments', articles.commentCreate);
+router.delete('/events/:id/comments/:commentId', articles.commentDelete);
