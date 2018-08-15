@@ -11,7 +11,7 @@ const commentSchema = new mongoose.Schema({
 const articleSchema = new mongoose.Schema({
   articleTitle: {type: String, required: true },
   text: {type: String, required: true },
-  image: {tpye: String},
+  image: {type: String},
   user: {type: mongoose.Schema.ObjectId, ref: 'User'},
   time: {type: Date, default: Date.now() },
   comments: [ commentSchema ]

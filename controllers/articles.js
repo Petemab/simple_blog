@@ -12,8 +12,7 @@ function indexRoute(req, res, next) {
 function showRoute(req, res, next){
   Article
     .findById(req.params.id)
-    .exec()
-    .populate('comments.user')
+    // .populate('comments.user')
     .exec()
     .then(article => {
       if(!article) return res.sendStatus(404);
@@ -27,7 +26,6 @@ function createRoute(req, res, next){
   // req.body.user = req.currentUser;
   Article
     .create(req.body)
-    // if I ever refer to this project in future - REMEMBER BODY PARSER!!!!!
     .then(article => res.status(201).json(article))
     .catch(next);
 }
