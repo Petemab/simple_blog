@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const articles = require('../controllers/articles');
+const users = require('../controllers/users');
 
 
 router.route('/articles')
@@ -13,6 +14,14 @@ router.route('/articles/:id')
   .put(articles.update)
   //make this secure once I've tested it
   .delete(articles.delete);
+
+router.route('/users')
+  .get(users.userIndex);
+
+router.route('/users/:id')
+  .get(users.userShow)
+  //make this secure once I've tested it
+  .delete(users.userDelete);
 
 //make this secure once I've tested it
 router.post('/events/:id/comments', articles.commentCreate);
